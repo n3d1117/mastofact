@@ -18,7 +18,7 @@ def main():
     )
 
     # Check if the required environment variables are set
-    required_values = ['MASTODON_BOT_TOKEN', 'OPENAI_API_KEY']
+    required_values = ['MASTODON_INSTANCE', 'MASTODON_BOT_TOKEN', 'OPENAI_API_KEY']
     missing_values = [value for value in required_values if os.environ.get(value) is None]
     if len(missing_values) > 0:
         logging.error(f'The following environment values are missing in your .env: {", ".join(missing_values)}')
@@ -27,7 +27,7 @@ def main():
     # Setup Mastodon
     mastodon = Mastodon(
         access_token=os.environ['MASTODON_BOT_TOKEN'],
-        api_base_url='https://mastodon.social/'
+        api_base_url=os.environ['MASTODON_INSTANCE']
     )
 
     # Setup OpenAI

@@ -18,6 +18,7 @@ A silly ChatGPT-powered Mastodon bot that toots a random fact every hour. Runnin
 ### Configuration
 Customize the configuration by copying `.env.example` and renaming it to `.env`, then editing the parameters as desired:
 ```bash
+MASTODON_INSTANCE="YOUR_MASTODON_INSTANCE" # e.g. https://mastodon.social/
 MASTODON_BOT_TOKEN="YOUR_MASTODON_BOT_TOKEN"
 OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
 
