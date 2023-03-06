@@ -32,13 +32,13 @@ def main():
 
     # Setup OpenAI
     openai.api_key = os.environ['OPENAI_API_KEY']
-    prompt = "Tell me a random fact, be it fun, lesser-known or just interesting."
+    prompt = "Tell me a random fact, be it fun, lesser-known or just interesting. Before answering, always " \
+             "check your previous answers to make sure you haven't answered with the same fact before, " \
+             "even in different form."
     history = [{
         "role": "system",
-        "content": "You are a helpful assistant. When asked about a random fun/lesser known fact, "
-                   "you never answer with the same fact twice. If don't know any more facts, "
-                   "start making them up. Before answering, always check your previous answers to "
-                   "make sure you haven't answered with the same fact before."
+        "content": "You are a helpful assistant. When asked about a random fun, lesser-known or interesting fact, "
+                   "you only reply with the fact and nothing else."
     }]
 
     # Post status every POST_INTERVAL_SECONDS
@@ -52,7 +52,8 @@ def main():
 
             response = openai.ChatCompletion.create(
                 model='gpt-3.5-turbo',
-                messages=history
+                messages=history,
+                temperature=1.3,
             )
 
             answer = response.choices[0]['message']['content']\
