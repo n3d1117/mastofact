@@ -1,4 +1,4 @@
-<img src="https://github.com/n3d1117/mastofact/files/10888534/mastofact.pdf" width="150" height="150">
+<img src="https://user-images.githubusercontent.com/11541888/225115015-ce860820-9470-406b-bf24-a70b110ec67b.png" width="150" height="150">
 
 # Mastofact
 ![python-version](https://img.shields.io/badge/python-3.10-blue.svg)
