@@ -47,7 +47,7 @@ pipenv shell
 
 4. Use the following command to start the bot:
 ```
-python main.py
+python bot.py
 ```
 
 #### Using Docker Compose
